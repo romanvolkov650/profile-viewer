@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.romanvolkov.profileviewer.PaginationScrollListener
 import com.romanvolkov.profileviewer.R
 import com.romanvolkov.profileviewer.main.adapter.MainAdapter
 import com.romanvolkov.profileviewer.main.viewmodel.IMainActivityViewModel
@@ -30,6 +31,12 @@ class MainActivity : AppCompatActivity() {
             adapter = mainAdapter
             setHasFixedSize(true)
         }
+        recycler.addOnScrollListener(object :
+            PaginationScrollListener((recycler.layoutManager) as LinearLayoutManager) {
+            override fun loadMoreItems() {
+                viewModel.load()
+            }
+        })
         mainAdapter.onClickListener = {
             val intent = Intent(this, ProfileActivity::class.java)
             val bundle = Bundle()

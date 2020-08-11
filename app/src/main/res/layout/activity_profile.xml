@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="16dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        app:civ_border_width="2dp"
-        app:civ_border_color="#FF000000"
         android:id="@+id/iv_photo"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="32dp"
         android:src="@mipmap/ic_launcher"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -70,12 +71,12 @@
         app:layout_constraintTop_toBottomOf="@id/tv_cell" />
 
     <EditText
-        app:layout_constraintLeft_toLeftOf="parent"
         android:id="@+id/tv_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="romanvolkov650@gmail.com"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_email_label"
         tools:ignore="TextFields" />
 
@@ -89,12 +90,12 @@
         app:layout_constraintTop_toBottomOf="@id/tv_email" />
 
     <EditText
-        app:layout_constraintLeft_toLeftOf="parent"
         android:id="@+id/tv_skype"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="romanvolko_v"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_skype_label"
         tools:ignore="TextFields" />
 
